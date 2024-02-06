@@ -5,7 +5,8 @@ public class PlayerMotor : MonoBehaviour
 {
     private Rigidbody rb;
 
-    private Vector3 velocity = Vector3.zero;
+    private Vector3 velocity = Vector3.zero; // передвижение 
+    private Vector3 rotation = Vector3.zero; // вращение    
 
     void Start ()
     {
@@ -17,9 +18,15 @@ public class PlayerMotor : MonoBehaviour
         velocity = _velocity;
     }
 
+    public void Rotate (Vector3 _rotation)
+    {
+        rotation = _rotation;
+    }
+
     void FixedUpdate ()
     {
         PerformMove();
+        PerformRotation();
     }
 
     void PerformMove ()
@@ -29,5 +36,10 @@ public class PlayerMotor : MonoBehaviour
             rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
         }
     }
+
+    void PerformRotation ()
+    {
+        rb.MoveRotation(rb.rotation * Quaternion.Euler (rotation) ); // rb.rotation - вращение, которое стоит сейчас
+    } // просто так вращать нельзя, нужно всё делать через Quaternion 
 
 }
