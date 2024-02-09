@@ -642,6 +642,8 @@ GameObject:
   - component: {fileID: 618288901}
   - component: {fileID: 618288903}
   - component: {fileID: 618288902}
+  - component: {fileID: 618288905}
+  - component: {fileID: 618288904}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -772,6 +774,8 @@ MonoBehaviour:
   lookSpeed: 100
   minAngle: -90
   maxAngle: 90
+  xRot: 0
+  motor: {fileID: 0}
 --- !u!114 &618288903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,6 +789,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1602758625}
+  rb: {fileID: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0}
+  rotationCamera: {x: 0, y: 0, z: 0}
+--- !u!143 &618288904
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618288896}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &618288905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618288896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d7de37c3d7b46498303f3925eee623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 618288904}
+  speed: 12
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,6 +1271,7 @@ GameObject:
   - component: {fileID: 1602758623}
   - component: {fileID: 1602758625}
   - component: {fileID: 1602758624}
+  - component: {fileID: 1602758626}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1305,6 +1354,20 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1602758626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602758622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3272c52c24cd24e98965dc2a08e9d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 1500
+  playerBody: {fileID: 618288900}
 --- !u!1001 &1790272079
 PrefabInstance:
   m_ObjectHideFlags: 0
