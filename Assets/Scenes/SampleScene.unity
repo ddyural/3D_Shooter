@@ -414,6 +414,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 154422276}
+  - component: {fileID: 154422277}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -429,8 +430,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154422275}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17, y: -0.176, z: 0.422}
+  m_LocalRotation: {x: -0, y: -0.008655236, z: -0, w: 0.99996257}
+  m_LocalPosition: {x: 0.15200686, y: -0.269, z: 0.4171465}
   m_LocalScale: {x: 0.23683348, y: 0.19764122, z: 0.19764122}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -439,7 +440,22 @@ Transform:
   - {fileID: 472471676}
   - {fileID: 1215884381}
   m_Father: {fileID: 1602758623}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -0.992, z: 0}
+--- !u!114 &154422277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154422275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c87a16af606a4e4f970deae55328bc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  range: 100
+  fpsCam: {fileID: 1602758625}
 --- !u!1 &214879048
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,12 +786,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22920e8b32e167b4fb113df6361f0b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  lookSpeed: 100
-  minAngle: -90
-  maxAngle: 90
-  xRot: 0
-  motor: {fileID: 0}
 --- !u!114 &618288903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,11 +798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae5abd2a01ca8749a4961a71772c360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1602758625}
-  rb: {fileID: 0}
-  velocity: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
-  rotationCamera: {x: 0, y: 0, z: 0}
 --- !u!143 &618288904
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1334,7 +1339,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
