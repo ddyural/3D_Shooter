@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class ProgressBarController : MonoBehaviour
 {
+    
+
     [Header("UI Elements")]
     [SerializeField] private Image image;
 
@@ -22,6 +24,7 @@ public class ProgressBarController : MonoBehaviour
         {
             Debug.Log(message: "No okay");
         }
+        
     }
 
     private void LateUpdate()
@@ -32,5 +35,11 @@ public class ProgressBarController : MonoBehaviour
 
     public void SetValue(int value) => this.value = value;
     public void SetMaxValue(int maxValue) => this.maxValue = maxValue;
+
+
+
+
+
+
 
 }
