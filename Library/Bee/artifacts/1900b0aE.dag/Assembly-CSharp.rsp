@@ -357,6 +357,7 @@
 "Assets/PlayerMovement.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/PlayerMotor.cs"
+"Assets/Scripts/ProgressBarController.cs"
 "Assets/Target.cs"
 -langversion:9.0
 
